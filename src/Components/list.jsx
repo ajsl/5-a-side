@@ -12,17 +12,18 @@ class List extends Component {
 		return (
 
 			<React.Fragment>
-
-				<form>
-					<input type="text" />
-					<input type="submit" name="add"/>
-				</form>
-				
-				{/*render the player names below from the array in store. 
-				names passed through props.*/}
+				<section className="form-section">
+					<form className="add-input">
+						<input type="text" />
+						<input type="submit" name="add"/>
+					</form>
+				</section>	
+					
+					{/*render the player names below from the array in store. 
+					names passed through props.*/}
 
 				<Player name="James" />	
-
+				
 			</React.Fragment>
 		);
 

@@ -4,10 +4,11 @@ const Header = () => (
 
 	<React.Fragment>
 
-		<header>
+		<header className="header">
+			<div className="header-box">
 
-			<h1>5 a side team picker</h1>
-
+				<h1>5 a side team picker</h1>
+			</div>	
 		</header>
 
 	</React.Fragment>
