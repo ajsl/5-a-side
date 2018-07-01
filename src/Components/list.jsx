@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Player from "./Player";
+import { Link } from "react-router-dom";
 
 class List extends Component {
 	constructor(props){
@@ -42,7 +43,7 @@ class List extends Component {
 
 
 	render() {
-		const { names, onClick, id } = this.props 
+		const { names, onClick  } = this.props 
 		//const names = ["James", "Peter", "Charlotte", "Olivia", "Emma", "Alex", "Alice", "Emily", "John"];
 		
 		return (
@@ -60,7 +61,12 @@ class List extends Component {
 				<section className="player-list">
 
 
-					{ names.map((names, i) => <div key={ names.id } className="player-card" ><Player id={ names.id } names={ names } onClick={ onClick } /></div>)}
+					{ names.map((names, i) => <div key={ names.id } className="player-card" ><Player id={ names.id } names={ names } onClick={ onClick } btn={ true }/></div>)}
+
+				</section>
+				<section className="sort-btn">
+
+					<button><Link to="/team">Sort Teams</Link></button>
 
 				</section>
 					

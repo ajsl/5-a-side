@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Components/Header";
 import List from "./Containers/List";
-import Team from "./Components/Team";
+import Team from "./Containers/Team";
 import Footer from "./Components/Footer";
 import {
     BrowserRouter as Router,

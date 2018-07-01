@@ -78,6 +78,10 @@ footer {
   width: 100px;
   margin: 5%; }
 
+.team-list {
+  display: flex;
+  justify-content: space-around; }
+
 .form-section {
   display: flex;
   justify-content: center; }
@@ -85,3 +89,8 @@ footer {
 .add-input {
   display: flex;
   justify-content: center; }
+
+.sort-btn {
+  display: flex;
+  justify-content: center;
+  margin: 2% 5px; }
