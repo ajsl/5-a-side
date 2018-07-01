@@ -4,21 +4,29 @@ class Player extends Component {
 	constructor(props){
 		super(props);
 
+		this.onDelete = this.onDelete.bind(this);
+
+	}
+
+	onDelete() {
+		const id = this.props.id;
+		
+		this.props.onClick(id)
 	}
 
 	// render the  player card with button to delete. 
 	render () {
 
-		const { name } = this.props;
+		const { onDelete, names, id } = this.props;
 
 		return (
 
 			<React.Fragment>
 
-				<aside> 
+				<aside > 
 
-					<h4>{name}</h4>
-					<button>X</button>
+					<h4>{names.name}</h4>
+					<button  onClick={ this.onDelete }>X</button>
 
 				</aside>
 

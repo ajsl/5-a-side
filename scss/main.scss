@@ -23,3 +23,24 @@
 
 }
 
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.player-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;	
+	margin: 10% 2% 
+
+}
+
+.player-card {
+	border: 1px solid black;
+	heigth: 30px;
+	width: 100px;
+	margin: 5%;
+}
