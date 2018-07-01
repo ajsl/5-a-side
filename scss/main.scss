@@ -54,3 +54,21 @@ footer {
 .error-container {
 	display: inline-block;
 }
+
+.team-title {
+	justify-content: center;
+	align-self: center;
+}
+
+.team-card {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+}
+.footer-title {
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	border-top: 1px solid black;
+}

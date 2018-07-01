@@ -3,9 +3,7 @@ import Player from "./Player";
 import { Link } from "react-router-dom";
 
 let validate = (value => {
-	if (value < 1 ){
-		return false
-	}else if(value > 12 ){
+	if (value.length < 1 || value.length > 12 ){
 		return false
 	}else{
 		return true
@@ -32,13 +30,34 @@ class List extends Component {
 
 		let error = document.getElementById("errorContainer")
 		let p = document.createElement("p");
-		p.textContent = "Error - name must be at least 1 charecter long!";
+		let errorChild = document.getElementById("error-p")
+
+		p.textContent = "Error - name must be between 1 and 12 cherecters long!";
 		e.preventDefault();
 
 		const data = this.state.value;
 
-		validate(data) ? this.props.onSubmit(data) : error.appendChild(p);
+		if (validate(data)){ 
+			this.props.onSubmit(data)
 
+
+		 	this.setState(({
+			value: "",
+			 }))
+
+		 	
+
+			}else{
+				error.appendChild(p);
+
+				p.setAttribute("id", "error-p")
+
+				this.setState(({
+				value: "",
+
+			 }))
+
+			}
 			
 		// 	this.setState(({
 		// 		value: "",
@@ -88,7 +107,7 @@ class List extends Component {
 					</div>
 					<form className="add-input" onSubmit={ this.handleSubmit }>
 						<input value={this.state.value} onChange={ e => this.handleChange(e) } type="text" />
-						<input re type="submit" value="add"/>
+						<input type="submit" value="add"/>
 					</form>
 				</section>	
 				{/*render the player names below from the array in store. 

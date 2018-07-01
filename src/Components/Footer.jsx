@@ -7,9 +7,10 @@ const Footer = () => (
 
 		<section>
 
-			<footer>
+			<footer className="footer-title">
 
 				<h4>By James Leith</h4>
+				<p>Version 1.1</p>
 
 			</footer>
 

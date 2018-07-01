@@ -48,18 +48,18 @@ class Team extends Component {
 			<React.Fragment>
 				<section className="team-list">
 
-					<div className="team1">
+					<div className="team-card team1">
 
-						<h4>Team 1</h4>
+						<h4 className ="team-title">Team 1</h4>
 
 						{ names1.map((name, i ) => <div key={ name.id } className="player-card" ><Player id={ name.id } names={ name } /></div>)}
 
 					</div>
 
 
-					<div className="team2"> 
+					<div className="team-card team2"> 
 
-						<h4>Team 2</h4>
+						<h4 className ="team-title">Team 2</h4>
 
 						{ names2.map((names, i) => <div key={ names.id } className="player-card" ><Player id={ names.id } names={ names }  /></div>)}
 						
