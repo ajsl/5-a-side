@@ -22,6 +22,7 @@ const shuffle = (array => {
 const midPoint = (array => Math.ceil(array.length / 2));
 
 
+
 class Team extends Component {
 	constructor(props){
 		super(props);
@@ -32,6 +33,8 @@ class Team extends Component {
 			
 		}
 	}
+	
+	
 
 	
 	render() {
@@ -39,6 +42,7 @@ class Team extends Component {
 		//split the names array into 2 separate arrays. 
 		const names1 = this.state.names.filter((name, i ) => i < midPoint(this.state.names));
 		const names2 = this.state.names.filter((name, i ) => i >= midPoint(this.state.names));
+
 		return (
 
 			<React.Fragment>

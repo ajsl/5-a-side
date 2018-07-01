@@ -82,8 +82,13 @@ footer {
   display: flex;
   justify-content: space-around; }
 
+.error-container {
+  display: inline-block; }
+
 .form-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center; }
 
 .add-input {
