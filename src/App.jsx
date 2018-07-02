@@ -13,7 +13,7 @@ import {
 
 const App = () => (
 
-  <React.Fragment>
+  <React.Fragment><section className="wrapper">
 
     <Header />
 
@@ -34,7 +34,7 @@ const App = () => (
     <Footer />
 
 
-  </React.Fragment>
+ </section></React.Fragment>
 
 
 

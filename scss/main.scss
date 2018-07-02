@@ -1,3 +1,9 @@
+.wrapper {
+	margin: 10px 50px 10px 50px;
+	border: 1px solid black;
+	box-shadow: 0px 0px 104px -6px rgba(0,0,0,0.8);
+}
+
 .header-box {
 
 	border: 1px solid black;
@@ -40,9 +46,14 @@ footer {
 
 .player-card {
 	border: 1px solid black;
-	heigth: 30px;
+	border-radius: 5px;
+	padding: 10px 20px;
 	width: 100px;
-	margin: 5%;
+	margin: 20px;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0px 0px 40px -6px rgba(0,0,0,0.8);
+
 }
 
 .team-list {
@@ -72,3 +83,11 @@ footer {
 	height: 100px;
 	border-top: 1px solid black;
 }
+
+
+@for $i from 1 through 3 {
+  .card-#{$i} {
+    padding: 100px * #{$i}
+  }
+}
+

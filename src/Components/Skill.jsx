@@ -36,11 +36,18 @@ class Skill extends Component {
 
 	
 	render() {
-
 		//split the names array into 2 separate arrays one with odd id's and the other even
 		const names1 = shuffle(this.state.names.filter((name, i ) => i % 2 === 0 ));
 		const names2 = shuffle(this.state.names.filter((name, i ) => i % 2 !== 0 ));
-		console.log(this.state.names)
+		let reserve = {};
+		if (names1.length > names2.length ) {
+			reserve = names1.pop();
+		}else if(names2.length > names1.length) {
+			reserve = names2.pop();
+		}
+
+		console.log(reserve);
+		
 		return (
 
 			<React.Fragment>
@@ -50,16 +57,23 @@ class Skill extends Component {
 
 						<h4 className ="team-title">Team 1</h4>
 
-						{ names1.map((name, i ) => <div key={ name.id } className="player-card" ><Player id={ name.id } names={ name } /></div>)}
+						{ names1.map((name, i ) => <div key={ name.id }  ><Player id={ name.id } names={ name } /></div>)}
 
 					</div>
+
+					{ reserve.id ?
+					<div className="team-card">
+						<h4 className="team-title">Reserve</h4>
+						 <Player id={ reserve.id } names={ reserve }/> 
+					</div>
+					: <div></div>}
 
 
 					<div className="team-card team2"> 
 
 						<h4 className ="team-title">Team 2</h4>
 
-						{ names2.map((names, i) => <div key={ names.id } className="player-card" ><Player id={ names.id } names={ names }  /></div>)}
+						{ names2.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names }  /></div>)}
 						
 
 					</div> 

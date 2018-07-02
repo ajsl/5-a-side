@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import Player from "./Player";
 import { Link } from "react-router-dom";
-
-let validate = (value => {
-	if (value.length < 1 || value.length > 12 ){
-		return false
-	}else{
-		return true
-	}
-
-});
-
+import { validate, repeat } from "../Data/validation";
 
 
 class List extends Component {
@@ -30,11 +21,9 @@ class List extends Component {
 
 	handleSubmit(e) {
 
-		let error = document.getElementById("errorContainer")
-		let p = document.createElement("p");
-		let errorChild = document.getElementById("error-p")
+		let errorMessage = document.getElementById("error_message")
 
-		p.textContent = "Error - name must be between 1 and 12 cherecters long!";
+		
 		e.preventDefault();
 
 		const data = this.state.value;
@@ -42,6 +31,7 @@ class List extends Component {
 
 		if (validate(data)){ 
 			this.props.onSubmit(data, skill)
+			errorMessage.textContent = "";
 
 
 		 	this.setState(({
@@ -51,9 +41,7 @@ class List extends Component {
 		 	
 
 			}else{
-				error.appendChild(p);
-
-				p.setAttribute("id", "error-p")
+				errorMessage.textContent = "Error - name must be between 1 and 12 cherecters long!";
 
 				this.setState(({
 				value: "",
@@ -92,11 +80,17 @@ class List extends Component {
 
 			<React.Fragment>
 				<section className="form-section">
-					<div className="error-container" id="errorContainer">
+					<div id="error_container" className="error-container">
+						<p id="error_message" className="error-message"></p>
 					</div>
 					<form className="add-input" onSubmit={ this.handleSubmit }>
-						<input value={this.state.value} onChange={ e => this.handleChange(e) } type="text" />
+						<div className="name-input">
+							<label>Enter Player Name: </label>
+							<input value={this.state.value} onChange={ e => this.handleChange(e) } type="text" />
+						</div>	
+
 						<div className="radio-btn-container">
+						<label>Player Skill Level:</label>
 							<div>
 								<label>
 									<input value={1} checked={ this.state.skill === "1" } onChange={this.handleSelect} type="radio" />
@@ -137,13 +131,13 @@ class List extends Component {
 				<section className="player-list">
 
 
-					{ names.map((names, i) => <div key={ names.id } className="player-card" ><Player id={ names.id } names={ names } onClick={ onClick } btn={ true }/></div>)}
+					{ names.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names } onClick={ onClick } btn={ true }/></div>)}
 
 				</section>
 				<section className="sort-btn">
 
-					<Link  to="/team"><button disabled={ names.length !== 10 ? true : false } >Randomly Sort Teams</button></Link>
-					<Link  to="/skill"><button disabled={ names.length !== 10 ? true : false } >Sort Teams by skill level</button></Link>
+					<Link  to="/team"><button disabled={ names.length < 4 ? true : false } >Randomly Sort Teams</button></Link>
+					<Link  to="/skill"><button disabled={ names.length < 4 ? true : false } >Sort Teams by skill level</button></Link>
 
 				</section>
 					

@@ -25,10 +25,10 @@ class Player extends Component {
 
 			<React.Fragment>
 
-				<aside > 
+				<aside className="player-card card-1 card-2 card-3"> 
 
 					<h4>{names.name}</h4>
-					{ btn ? <button onClick={ this.onDelete } >X</button> : ""}
+					{ btn ? <button onClick={ this.onDelete } >x</button> : ""}
 				</aside>
 
 			</React.Fragment> 
