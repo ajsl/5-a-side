@@ -19,10 +19,12 @@ class List extends Component {
 
 		this.state = {
 
-			value: ""
+			value: "",
+			skill: 1,
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSelect = this.handleSelect.bind(this);
 
 	}	
 
@@ -36,9 +38,10 @@ class List extends Component {
 		e.preventDefault();
 
 		const data = this.state.value;
+		const skill = this.state.skill;
 
 		if (validate(data)){ 
-			this.props.onSubmit(data)
+			this.props.onSubmit(data, skill)
 
 
 		 	this.setState(({
@@ -58,26 +61,6 @@ class List extends Component {
 			 }))
 
 			}
-			
-		// 	this.setState(({
-		// 		value: "",
-
-		// if (data.length > 0){
-		// 	this.props.onSubmit(data);
-
-		// 	this.setState(({
-		// 		value: "",
-		// }))
-
-
-		// }else{
-
-		// 	error.appendChild(p);
-
-
-		// }
-		
-
 		
 	}
 
@@ -89,6 +72,13 @@ class List extends Component {
 
 	}
 
+	handleSelect(e) {
+
+		this.setState({skill: e.target.value});
+
+	}
+
+
 
 
 
@@ -98,7 +88,7 @@ class List extends Component {
 	render() {
 		const { names, onClick  } = this.props 
 		//const names = ["James", "Peter", "Charlotte", "Olivia", "Emma", "Alex", "Alice", "Emily", "John"];
-		
+		console.log(this.state.skill)
 		return (
 
 			<React.Fragment>
@@ -107,6 +97,38 @@ class List extends Component {
 					</div>
 					<form className="add-input" onSubmit={ this.handleSubmit }>
 						<input value={this.state.value} onChange={ e => this.handleChange(e) } type="text" />
+						<div className="radio-btn-container">
+							<div>
+								<label>
+									<input value={1} checked={ this.state.skill === "1" } onChange={this.handleSelect} type="radio" />
+									1
+								</label>
+							</div>
+							<div>
+								<label>
+									<input value={2} checked={ this.state.skill === "2" } onChange={this.handleSelect} type="radio" />
+									2
+								</label>
+							</div>
+							<div>
+								<label>
+									<input value={3} checked={ this.state.skill === "3" } onChange={this.handleSelect} type="radio" />
+									3	
+								</label>
+							</div>
+							<div>
+								<label>
+									<input value={4} checked={ this.state.skill === "4" } onChange={this.handleSelect} type="radio" />
+									4
+								</label>
+							</div>
+							<div>
+								<label>
+									<input value={5} checked={ this.state.skill === "5" } onChange={this.handleSelect} type="radio" />
+									5
+								</label>
+							</div>
+						</div>	
 						<input type="submit" value="add"/>
 					</form>
 				</section>	
@@ -121,7 +143,8 @@ class List extends Component {
 				</section>
 				<section className="sort-btn">
 
-					<Link  to="/team"><button disabled={ names.length !== 10 ? true : false } >Sort Teams</button></Link>
+					<Link  to="/team"><button disabled={ names.length !== 10 ? true : false } >Randomly Sort Teams</button></Link>
+					<Link  to="/skill"><button disabled={ names.length !== 10 ? true : false } >Sort Teams by skill level</button></Link>
 
 				</section>
 					

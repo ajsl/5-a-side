@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
 
 	return {
 
-		onSubmit: data => dispatch(addName(data)),
+		onSubmit: (data, skill) => dispatch(addName(data, skill)),
 		onClick: data => dispatch(deletePlayer(data))
 	};
 };

@@ -109,7 +109,12 @@ footer {
 
 .add-input {
   display: flex;
+  flex-direction: column;
   justify-content: center; }
+
+.radio-btn-container {
+  display: flex;
+  flex-direction: row; }
 
 .sort-btn {
   display: flex;

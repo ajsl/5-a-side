@@ -1,7 +1,7 @@
 
-const setName = (state, {name, id}) => {
+const setName = (state, {name, id, skill}) => {
 
-	const player = {name: name, id: id}
+	const player = {name: name, id: id, skill: skill}
 	return {
 		...state, 
 		names: state.names.concat(player)
