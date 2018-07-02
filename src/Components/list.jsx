@@ -20,7 +20,7 @@ class List extends Component {
 		this.state = {
 
 			value: "",
-			skill: 1,
+			skill: "1",
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -88,7 +88,6 @@ class List extends Component {
 	render() {
 		const { names, onClick  } = this.props 
 		//const names = ["James", "Peter", "Charlotte", "Olivia", "Emma", "Alex", "Alice", "Emily", "John"];
-		console.log(this.state.skill)
 		return (
 
 			<React.Fragment>

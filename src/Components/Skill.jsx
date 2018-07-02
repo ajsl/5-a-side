@@ -18,11 +18,6 @@ const shuffle = (array => {
 	return array;
 }) 
 
-//function to get the halfway point of an array
-const midPoint = (array => Math.ceil(array.length / 2));
-
-
-
 
 
 class Skill extends Component {
@@ -31,8 +26,8 @@ class Skill extends Component {
 
 		//store the shuffled array of names in state. 
 		this.state = {
-			names: shuffle(this.props.names),
-			names: this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill)),
+			//use sort to re-arrange the array into skill order
+			names: (this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
 			
 		}
 	}
@@ -42,10 +37,10 @@ class Skill extends Component {
 	
 	render() {
 
-		//split the names array into 2 separate arrays. 
-		const names1 = this.state.names.filter((name, i ) => i % 2 === 0 );
-		const names2 = this.state.names.filter((name, i ) => i % 2 !== 0 );
-
+		//split the names array into 2 separate arrays one with odd id's and the other even
+		const names1 = shuffle(this.state.names.filter((name, i ) => i % 2 === 0 ));
+		const names2 = shuffle(this.state.names.filter((name, i ) => i % 2 !== 0 ));
+		console.log(this.state.names)
 		return (
 
 			<React.Fragment>
