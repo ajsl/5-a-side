@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Player from "./Player";
+import { Link } from "react-router-dom";
 
 // function to shuffle the array. 
 const shuffle = (array => {
@@ -51,6 +52,8 @@ class Skill extends Component {
 		return (
 
 			<React.Fragment>
+
+				{ this.state.names.length > 0 ? "": <div className="no-player"><h1>No players found</h1><Link to="/"><h2>Click here to add players</h2></Link></div>}
 				<section className="team-list">
 
 					<div className="team-card team1">

@@ -84,13 +84,14 @@ class List extends Component {
 						<p id="error_message" className="error-message"></p>
 					</div>
 					<form className="add-input" onSubmit={ this.handleSubmit }>
-						<div className="name-input">
+
+						<div className="input name-input-container">
 							<label>Enter Player Name: </label>
-							<input value={this.state.value} onChange={ e => this.handleChange(e) } type="text" />
+							<input className="name-input" value={this.state.value} onChange={ e => this.handleChange(e) } type="text" />
 						</div>	
 
-						<div className="radio-btn-container">
-						<label>Player Skill Level:</label>
+						<div className="input radio-btn-container">
+							<label className="radio-label">Player Skill Level: </label>
 							<div>
 								<label>
 									<input value={1} checked={ this.state.skill === "1" } onChange={this.handleSelect} type="radio" />
@@ -122,8 +123,12 @@ class List extends Component {
 								</label>
 							</div>
 						</div>	
-						<input type="submit" value="add"/>
-					</form>
+						
+					
+					<div className="submit-btn-container">
+							<input className="input submit-btn" type="submit" value="Add Player"/>
+					</div>
+					</form>	
 				</section>	
 				{/*render the player names below from the array in store. 
 				names passed through props.*/}

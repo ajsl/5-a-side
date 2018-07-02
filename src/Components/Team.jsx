@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Player from "./Player";
+import { Link } from "react-router-dom";
 
 // function to shuffle the array. 
 const shuffle = (array => {
@@ -42,29 +43,47 @@ class Team extends Component {
 		//split the names array into 2 separate arrays. 
 		const names1 = this.state.names.filter((name, i ) => i < midPoint(this.state.names));
 		const names2 = this.state.names.filter((name, i ) => i >= midPoint(this.state.names));
+		let reserve = {};
+		if (names1.length > names2.length ) {
+			reserve = names1.pop();
+		}else if(names2.length > names1.length) {
+			reserve = names2.pop();
+		}
 
 		return (
 
 			<React.Fragment>
+
+				{ this.state.names.length > 0 ? "": <div className="no-player"><h1>No players found</h1><Link to="/"><h2>Click here to add players</h2></Link></div>}
 				<section className="team-list">
 
-					<div className="team-card team1">
+						<div className="team-card team1">
 
-						<h4 className ="team-title">Team 1</h4>
+							<h4 className ="team-title">Team 1</h4>
 
-						{ names1.map((name, i ) => <div key={ name.id } className="player-card" ><Player id={ name.id } names={ name } /></div>)}
+							{ names1.map((name, i ) => <div key={ name.id }><Player id={ name.id } names={ name } /></div>)}
 
-					</div>
+						</div>
+
+						{ reserve.id ?
+
+						<div className="team-card">
+							<h4 className="team-title">Reserve</h4>
+							 <Player id={ reserve.id } names={ reserve }/> 
+						</div>
+						: <div></div>}
 
 
-					<div className="team-card team2"> 
 
-						<h4 className ="team-title">Team 2</h4>
+						<div className="team-card team2"> 
 
-						{ names2.map((names, i) => <div key={ names.id } className="player-card" ><Player id={ names.id } names={ names }  /></div>)}
-						
+							<h4 className ="team-title">Team 2</h4>
 
-					</div> 
+							{ names2.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names }  /></div>)}
+							
+
+						</div>
+
 				</section>	
 			</React.Fragment>
 				

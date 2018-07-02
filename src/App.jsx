@@ -4,6 +4,8 @@ import List from "./Containers/List";
 import Team from "./Containers/Team";
 import Skill from "./Containers/Skill";
 import Footer from "./Components/Footer";
+import FourOhFour from "./Components/FourOhFour";
+
 import {
     BrowserRouter as Router,
     Route,
@@ -26,12 +28,15 @@ const App = () => (
         <Route exact path="/team" component={ Team } />
 
         <Route exact path="/skill" component={ Skill } />
-      
+
+        <Route component={ FourOhFour } />
+
       </Switch>  
 
     </Router>  
 
     <Footer />
+
 
 
  </section></React.Fragment>
