@@ -66,13 +66,6 @@ class List extends Component {
 
 	}
 
-
-
-
-
-
-
-
 	render() {
 		const { names, onClick  } = this.props 
 		//const names = ["James", "Peter", "Charlotte", "Olivia", "Emma", "Alex", "Alice", "Emily", "John"];
@@ -94,31 +87,31 @@ class List extends Component {
 							<label className="radio-label">Player Skill Level: </label>
 							<div>
 								<label>
-									<input value={1} checked={ this.state.skill === "1" } onChange={this.handleSelect} type="radio" />
+									<input className="radio-btn" value={1} checked={ this.state.skill === "1" } onChange={this.handleSelect} type="radio" />
 									1
 								</label>
 							</div>
 							<div>
 								<label>
-									<input value={2} checked={ this.state.skill === "2" } onChange={this.handleSelect} type="radio" />
+									<input className="radio-btn" value={2} checked={ this.state.skill === "2" } onChange={this.handleSelect} type="radio" />
 									2
 								</label>
 							</div>
 							<div>
 								<label>
-									<input value={3} checked={ this.state.skill === "3" } onChange={this.handleSelect} type="radio" />
+									<input className="radio-btn" value={3} checked={ this.state.skill === "3" } onChange={this.handleSelect} type="radio" />
 									3	
 								</label>
 							</div>
 							<div>
 								<label>
-									<input value={4} checked={ this.state.skill === "4" } onChange={this.handleSelect} type="radio" />
+									<input className="radio-btn" value={4} checked={ this.state.skill === "4" } onChange={this.handleSelect} type="radio" />
 									4
 								</label>
 							</div>
 							<div>
 								<label>
-									<input value={5} checked={ this.state.skill === "5" } onChange={this.handleSelect} type="radio" />
+									<input className="radio-btn" value={5} checked={ this.state.skill === "5" } onChange={this.handleSelect} type="radio" />
 									5
 								</label>
 							</div>
@@ -126,7 +119,7 @@ class List extends Component {
 						
 					
 					<div className="submit-btn-container">
-							<input className="input submit-btn" type="submit" value="Add Player"/>
+							<input className="input btn submit-btn" type="submit" value="Add Player"/>
 					</div>
 					</form>	
 				</section>	
@@ -141,8 +134,8 @@ class List extends Component {
 				</section>
 				<section className="sort-btn">
 
-					<Link  to="/team"><button disabled={ names.length < 4 ? true : false } >Randomly Sort Teams</button></Link>
-					<Link  to="/skill"><button disabled={ names.length < 4 ? true : false } >Sort Teams by skill level</button></Link>
+					<Link  to="/team"><button className="btn" disabled={ names.length < 4 ? true : false } >Randomly Sort Teams</button></Link>
+					<Link  to="/skill"><button className="btn" disabled={ names.length < 4 ? true : false } >Sort Teams by skill level</button></Link>
 
 				</section>
 					

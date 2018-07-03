@@ -5,6 +5,9 @@ import Team from "./Containers/Team";
 import Skill from "./Containers/Skill";
 import Footer from "./Components/Footer";
 import FourOhFour from "./Components/FourOhFour";
+import image from "./assets/images/grass.jpg";
+
+
 
 import {
     BrowserRouter as Router,
@@ -13,9 +16,12 @@ import {
 } from "react-router-dom";
 
 
+
 const App = () => (
 
-  <React.Fragment><section className="wrapper">
+  
+
+  <React.Fragment><section  style={{ backgroundImage: `url($image)`} } className="wrapper">
 
     <Header />
 

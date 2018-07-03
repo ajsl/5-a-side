@@ -2,4 +2,34 @@
 	display: flex;
 	justify-content: center;
 	margin: 2% 5px;
+	color: black;
+
+	
 }
+
+.btn {
+	margin: 20px;
+	background: linear-gradient(#3E7AE9, #1354CD);
+	padding: 5px;
+	border-radius: 5px;
+
+	
+}
+
+.btn:hover {
+	border: 2px solid black;
+	padding: 4px;
+	background: linear-gradient(#1252C8, #1354CD);
+	transition-duration:: 0.3s;
+}
+
+button {
+	color: white;
+}
+
+.submit-btn {
+	color: white;
+}
+
+
+	

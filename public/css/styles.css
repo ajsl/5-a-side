@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Cairo:400,700");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,6 +46,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.ref-image {
+  width: 400px;
+  height: 400px; }
+
+.four-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around; }
+
 .wrapper {
   margin: 10px 50px 10px 50px;
   border: 1px solid black;
@@ -57,8 +69,6 @@ table {
   align-items: center;
   min-width: 60%;
   min-height: 150px; }
-  .header-box h1 {
-    font-size: 40px; }
 
 .header {
   display: flex;
@@ -125,12 +135,20 @@ footer {
   flex-direction: column;
   align-items: center; }
 
-body {
-  background-image: url("../assets/images/grass.jpg"); }
+#root {
+  background-image: url("./src/assets/images/grass.jpg"); }
+
+.error-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.wrapper {
+  background-color: rgba(255, 255, 255, 0.9); }
 
 .form-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center; }
 
@@ -139,6 +157,7 @@ body {
   flex-direction: column;
   justify-content: center;
   border: 1px solid black;
+  border-radius: 0px 50px 50px 0px;
   align-self: center;
   width: 50%; }
 
@@ -154,7 +173,8 @@ body {
     width: 60%; }
 
 .input {
-  margin: 10px; }
+  margin: 10px;
+  padding-right: 10%; }
 
 .radio-label {
   margin-right: 4px; }
@@ -169,13 +189,43 @@ body {
   align-self: center; }
   .submit-btn-container input {
     font-size: 16px;
-    padding: 30px 0px;
     width: 100%; }
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px; }
+
+.radio-btn {
+  border: 1px solid green; }
 
 .sort-btn {
   display: flex;
   justify-content: center;
-  margin: 2% 5px; }
+  margin: 2% 5px;
+  color: black; }
+
+.btn {
+  margin: 20px;
+  background: linear-gradient(#3E7AE9, #1354CD);
+  padding: 5px;
+  border-radius: 5px; }
+
+.btn:hover {
+  border: 2px solid black;
+  padding: 4px;
+  background: linear-gradient(#1252C8, #1354CD);
+  transition-duration: 0.3s; }
+
+button {
+  color: white; }
+
+.submit-btn {
+  color: white; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  color: black; }
 
 p {
   font-size: 12px; }
@@ -183,14 +233,33 @@ p {
 h4 {
   font-size: 18px; }
 
+h1 {
+  font-size: 40px; }
+  h1 b {
+    font-size: 80px; }
+
+btn {
+  color: #fff; }
+
 @media screen and (min-width: 1000px) {
   .wrapper {
     margin: 20px 10% 20px 10%; } }
 
 @media screen and (max-width: 400px) {
   .wrapper {
-    margin: 5px 10px 5px 10px; } }
+    margin: 5px 10px 5px 10px; }
+  .team-list {
+    flex-direction: column;
+    align-item: center; }
+  .team-card {
+    align-self: center; } }
 
 @media screen and (max-width: 300px) {
   .wrapper {
-    margin: 0px; } }
+    margin: 0px; }
+  .add-input {
+    width: 90%; } }
+
+@media screen and (max-width: 700px) {
+  .add-input {
+    width: 80%; } }

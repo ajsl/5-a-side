@@ -11,6 +11,16 @@
 		margin: 5px 10px 5px 10px;
 	}
 
+
+	.team-list {
+		flex-direction: column;
+		align-item: center;
+
+	}
+	.team-card {
+		align-self: center;
+	}
+
 }
 
 @media screen and (max-width: 300px) {
@@ -18,5 +28,15 @@
 	.wrapper {
 		margin: 0px;
 	}
+	
+
+	.add-input {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 700px) {
+	.add-input {
+		width: 80%;
+	} 
 }
 

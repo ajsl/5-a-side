@@ -7,7 +7,7 @@ const Header = () => (
 		<header className="header">
 			<div className="header-box">
 
-				<h1>5 a side team picker</h1>
+				<h1><b>5</b> a side team picker</h1>
 			</div>	
 		</header>
 
