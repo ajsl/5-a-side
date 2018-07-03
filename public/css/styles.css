@@ -230,6 +230,20 @@ button {
 .btn-delete {
   color: black; }
 
+.btn-skill {
+  display: flex;
+  justify-content: center; }
+
+.sort {
+  padding: 10px 50px;
+  font-size: 18px; }
+
+.sort:hover {
+  border: 2px solid black;
+  padding: 9px 49px;
+  background: linear-gradient(#1252C8, #1354CD);
+  transition-duration: 0.3s; }
+
 body {
   font-family: 'Cairo', sans-serif;
   color: black; }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Player from "./Player";
 import { Link } from "react-router-dom";
-import { validate, repeat } from "../Data/validation";
+import { validate, repeat } from "../Data/dataFunctions";
 
 
 class List extends Component {
@@ -134,8 +134,7 @@ class List extends Component {
 				</section>
 				<section className="sort-btn">
 
-					<Link  to="/team"><button className="btn" disabled={ names.length < 4 ? true : false } >Randomly Sort Teams</button></Link>
-					<Link  to="/skill"><button className="btn" disabled={ names.length < 4 ? true : false } >Sort Teams by skill level</button></Link>
+					{names.length > 3 ? <Link  to="/skill"><button className="btn sort" disabled={ names.length < 4 ? true : false } >Sort into teams</button></Link>: ""}
 
 				</section>
 					

@@ -1,23 +1,9 @@
 import React, { Component } from "react";
 import Player from "./Player";
 import { Link } from "react-router-dom";
+import { shuffle, midPoint } from "../Data/dataFunctions";
 
-// function to shuffle the array. 
-const shuffle = (array => {
-	let length = array.length, temp, index;
 
-	while (length > 0) {
-		index = Math.floor(Math.random() * length);
-
-		length -= 1;
-
-		temp = array[length];
-		array[length] = array[index];
-		array[index] = temp 
-	}
-
-	return array;
-}) 
 
 
 
@@ -28,18 +14,44 @@ class Skill extends Component {
 		//store the shuffled array of names in state. 
 		this.state = {
 			//use sort to re-arrange the array into skill order
-			names: (this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
-			
+			namesSkill: (this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
+			//array of players not ordered by skill level. 
+			namesRandom: shuffle(this.props.names),
+			sort: true,
 		}
+		this.handleChange = this.handleChange.bind(this);
 	}
-	
+	 handleChange() {
+
+	 	if (this.state.sort === false){
+		 	this.setState(({
+		 		sort: true,
+		 	}))
+		}else{
+			this.setState(({
+				sort: false,
+			}))
+		} 	
+	 }
 	
 
 	
 	render() {
-		//split the names array into 2 separate arrays one with odd id's and the other even
-		const names1 = shuffle(this.state.names.filter((name, i ) => i % 2 === 0 ));
-		const names2 = shuffle(this.state.names.filter((name, i ) => i % 2 !== 0 ));
+		//set up empty arrays 
+		let names1 = [];
+		let names2 = [];
+		
+		if(this.state.sort === true){
+			//split the names array into 2 separate arrays one with odd id's and the other even
+			names1 = shuffle(this.state.namesSkill.filter((name, i ) => i % 2 === 0 ));
+			names2 = shuffle(this.state.namesSkill.filter((name, i ) => i % 2 !== 0 ));
+		}else{
+			//split the array into 2 using the midpoint as a reference
+			names1 = this.state.namesRandom.filter((name, i ) => i < midPoint(this.state.namesRandom));
+			names2 = this.state.namesRandom.filter((name, i ) => i >= midPoint(this.state.namesRandom));
+			
+		}
+
 		let reserve = {};
 		if (names1.length > names2.length ) {
 			reserve = names1.pop();
@@ -47,13 +59,20 @@ class Skill extends Component {
 			reserve = names2.pop();
 		}
 
-		console.log(reserve);
 		
 		return (
 
 			<React.Fragment>
 
-				{ this.state.names.length > 0 ? "": <div className="no-player"><h1>No players found</h1><Link to="/"><h2>Click here to add players</h2></Link></div>}
+				{ this.state.namesRandom.length > 0 
+					?
+					<div className="btn-skill">
+						<input type="checkbox" value="skill" id="skill" onChange={this.handleChange} />
+						<label>sort by skill</label>
+					</div>  
+					: 
+					<div className="no-player"><h1>No players found</h1><Link to="/"><h2>Click here to add players</h2></Link></div>}
+					
 				<section className="team-list">
 
 					<div className="team-card team1">
