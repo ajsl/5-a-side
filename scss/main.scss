@@ -57,6 +57,7 @@ footer {
 .team-list {
 	display: flex;
 	justify-content: space-around;
+	margin: 0px 10%;
 
 }
 
@@ -108,5 +109,9 @@ footer {
 }
 .wrapper {
 	background-color: hsla(360, 100, 100, 0.9);
+}
+
+.player-card {
+	background-color: white;
 }
 

@@ -100,7 +100,8 @@ footer {
 
 .team-list {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin: 0px 10%; }
 
 .error-container {
   display: inline-block; }
@@ -145,6 +146,9 @@ footer {
 
 .wrapper {
   background-color: rgba(255, 255, 255, 0.9); }
+
+.player-card {
+  background-color: white; }
 
 .form-section {
   display: flex;
@@ -222,6 +226,9 @@ button {
 
 .submit-btn {
   color: white; }
+
+.btn-delete {
+  color: black; }
 
 body {
   font-family: 'Cairo', sans-serif;
