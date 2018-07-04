@@ -22,7 +22,7 @@
 	display: flex;
 	justify-content: center;
 	align-content: center;	
-	padding: 5% 0%; 
+	padding-top: 5%; 
 }
 
 
@@ -37,26 +37,15 @@ footer {
 	flex-wrap: wrap;
 	justify-content: space-around;	
 	margin: 10% 2%;
-	min-height: 200px;
+	min-height: 150px;
 }
 
-.player-card {
-	border: 1px solid black;
-	border-radius: 5px;
-	padding: 10px 20px;
-	width: 100px;
-	margin: 20px;
-	display: flex;
-	justify-content: space-between;
-	background-color: hsla(0, 0%, 90%, 1);
-	//box-shadow: 0px 0px 40px -6px rgba(0,0,0,0.8);
 
-}
 
 .team-list {
 	display: flex;
 	justify-content: space-around;
-	margin: 0px 10%;
+	margin: 5% 10%;
 
 }
 
@@ -69,16 +58,7 @@ footer {
 	align-self: center;
 }
 
-.team-card {
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
 
-	h4 {
-		align-self: center;
-	}
-}
 .footer-title {
 	display: flex;
 	flex-direction: column;
@@ -86,12 +66,6 @@ footer {
 	border-top: 1px solid black;
 }
 
-
-@for $i from 1 through 3 {
-  .card-#{$i} {
-    padding: 100px * #{$i}
-  }
-}
 
 .no-player {
 	display: flex;
