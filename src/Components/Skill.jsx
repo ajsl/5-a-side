@@ -104,8 +104,8 @@ class Skill extends Component {
 							names.length 
 							? 
 								<form onSubmit={this.handleSubmit1} className="team-input1">
-									<input type="text" value={ value1 } id="team1" onChange={this.handleChange1} />
-									<input type="submit"/>
+									<input className="name-input team-input"  placeholder="Enter Team Name" type="text" value={ value1 } id="team1" onChange={this.handleChange1} />
+									<input className="submit-btn btn team-btn"type="submit"/>
 								</form>
 							:
 								null
@@ -136,9 +136,9 @@ class Skill extends Component {
 							? 
 							names.length 
 							? 
-								<form onSubmit={this.handleSubmit2} className="team-input2">
-									<input type="text" value={ value2 } id="team2" onChange={this.handleChange2} />
-									<input type="submit"/>
+								<form onSubmit={this.handleSubmit2} className="team-input1">
+									<input className="name-input team-input" placeholder="Enter Team Name" type="text" value={ value2 } id="team2" onChange={this.handleChange2} />
+									<input className="submit-btn btn team-btn" type="submit"/>
 								</form>
 							:
 								null

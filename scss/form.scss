@@ -44,8 +44,7 @@
 .name-input {
 	height: 20px;
 	font-size: 16px;
-	display: flex;
-	align-items: center;
+	
 }
 .submit-btn-container {
 	align-self: center;
@@ -68,4 +67,13 @@
 .team-input-container {
 	display: flex;
 	justify-content: space-around;
+}
+
+.team-input {
+	max-width: 60%;
+	margin: 0px;
+}
+.team-input1 {
+	min-width: 100%;
+	overflow: visible;
 }

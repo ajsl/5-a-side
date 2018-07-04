@@ -185,9 +185,7 @@ footer {
 
 .name-input {
   height: 20px;
-  font-size: 16px;
-  display: flex;
-  align-items: center; }
+  font-size: 16px; }
 
 .submit-btn-container {
   align-self: center; }
@@ -206,6 +204,14 @@ footer {
 .team-input-container {
   display: flex;
   justify-content: space-around; }
+
+.team-input {
+  max-width: 60%;
+  margin: 0px; }
+
+.team-input1 {
+  min-width: 100%;
+  overflow: visible; }
 
 .sort-btn {
   display: flex;
@@ -257,6 +263,9 @@ button {
 
 .edit-btn {
   margin: 0px 0px 0px 5px; }
+
+.team-btn {
+  margin: 0px; }
 
 body {
   font-family: 'Cairo', sans-serif;
