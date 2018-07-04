@@ -33,10 +33,41 @@
 	.add-input {
 		width: 90%;
 	}
+
+	h1 {
+		font-size: 30px;
+		b {
+			font-size: 60px;
+		}
+	}
+	.name-input-container {
+	
+		margin: 2%;
+		input {
+
+			width: 100%;
+		}
+	}
+	.submit-btn {
+		align-self: center;
+		margin-left: 0px;
+	}	
+
+	.error-message {
+		font-size: 14px;
+	}
 }
+
 @media screen and (max-width: 700px) {
 	.add-input {
 		width: 80%;
 	} 
+	.header-box {
+		width: 80%;
+
+	}
+	.error-message {
+		position: relative;
+	}
 }
 

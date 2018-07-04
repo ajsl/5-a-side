@@ -50,5 +50,17 @@ button {
 	transition-duration:: 0.3s;
 }
 
+.team-edit-container {
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.edit-btn {
+	margin: 0px 0px 0px 5px;
+}
+
 
 	

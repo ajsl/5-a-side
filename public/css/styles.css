@@ -117,6 +117,8 @@ footer {
   flex-direction: column;
   align-content: center;
   justify-content: center; }
+  .team-card h4 {
+    align-self: center; }
 
 .footer-title {
   display: flex;
@@ -201,6 +203,10 @@ footer {
 .radio-btn {
   border: 1px solid green; }
 
+.team-input-container {
+  display: flex;
+  justify-content: space-around; }
+
 .sort-btn {
   display: flex;
   justify-content: center;
@@ -242,6 +248,16 @@ button {
   background: linear-gradient(#1252C8, #1354CD);
   transition-duration: 0.3s; }
 
+.team-edit-container {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.edit-btn {
+  margin: 0px 0px 0px 5px; }
+
 body {
   font-family: 'Cairo', sans-serif;
   color: black; }
@@ -259,6 +275,9 @@ h1 {
     background: linear-gradient(#1252C8, #1354CD);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; }
+
+h3 {
+  font-size: 26px; }
 
 btn {
   color: #fff; }
@@ -285,8 +304,25 @@ btn {
   .wrapper {
     margin: 0px; }
   .add-input {
-    width: 90%; } }
+    width: 90%; }
+  h1 {
+    font-size: 30px; }
+    h1 b {
+      font-size: 60px; }
+  .name-input-container {
+    margin: 2%; }
+    .name-input-container input {
+      width: 100%; }
+  .submit-btn {
+    align-self: center;
+    margin-left: 0px; }
+  .error-message {
+    font-size: 14px; } }
 
 @media screen and (max-width: 700px) {
   .add-input {
-    width: 80%; } }
+    width: 80%; }
+  .header-box {
+    width: 80%; }
+  .error-message {
+    position: relative; } }

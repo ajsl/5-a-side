@@ -74,6 +74,10 @@ footer {
 	flex-direction: column;
 	align-content: center;
 	justify-content: center;
+
+	h4 {
+		align-self: center;
+	}
 }
 .footer-title {
 	display: flex;

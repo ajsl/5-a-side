@@ -39,16 +39,34 @@ class Team extends Component {
 
 	
 	render() {
+console.log(this.state.names)
+		//console.log(this.state.names)
+		//set up empty arrays 
+		let names1 = [];
+		let names2 = [];
+		
+		if(this.state.sort !== true){
+			//split the names array into 2 separate arrays one with odd id's and the other even
+			names1 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 === 0 );
+			names2 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 !== 0 );
+		}else{
+			//split the array into 2 using the midpoint as a reference
+			names1 = this.state.names.filter((name, i ) => i % 2 === 0 );
+			names2 = this.state.names.filter((name, i ) => i % 2 !== 0 );
+			
+		}
 
-		//split the names array into 2 separate arrays. 
-		const names1 = this.state.names.filter((name, i ) => i < midPoint(this.state.names));
-		const names2 = this.state.names.filter((name, i ) => i >= midPoint(this.state.names));
 		let reserve = {};
 		if (names1.length > names2.length ) {
 			reserve = names1.pop();
 		}else if(names2.length > names1.length) {
 			reserve = names2.pop();
 		}
+
+		console.log(names1)
+		console.log(names2)
+
+		
 
 		return (
 
