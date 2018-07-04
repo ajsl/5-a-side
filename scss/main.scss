@@ -10,9 +10,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-width: 60%;
+	width: 60%;
 	min-height: 150px;
-
+	background-color: hsla(0, 0%, 90%, 1);
+	border-radius: 50px 50px 0px 0px;
 
 
 }
@@ -21,9 +22,7 @@
 	display: flex;
 	justify-content: center;
 	align-content: center;	
-	padding: 5% 
-
-
+	padding: 5% 0%; 
 }
 
 
@@ -39,7 +38,6 @@ footer {
 	justify-content: space-around;	
 	margin: 10% 2%;
 	min-height: 200px;
-
 }
 
 .player-card {
@@ -50,7 +48,8 @@ footer {
 	margin: 20px;
 	display: flex;
 	justify-content: space-between;
-	box-shadow: 0px 0px 40px -6px rgba(0,0,0,0.8);
+	background-color: hsla(0, 0%, 90%, 1);
+	//box-shadow: 0px 0px 40px -6px rgba(0,0,0,0.8);
 
 }
 
@@ -96,12 +95,7 @@ footer {
 	align-items: center;
 }
 
-#root {
 
-	background-image: url("./src/assets/images/grass.jpg");
-	
- 
-}
 .error-not-found {
 	display: flex;
 	flex-direction: column;
@@ -109,9 +103,10 @@ footer {
 }
 .wrapper {
 	background-color: hsla(360, 100, 100, 0.9);
+	border-radius: 10px;
 }
 
-.player-card {
-	background-color: white;
-}
+
+
+
 

@@ -32,17 +32,11 @@ class List extends Component {
 		if (validate(data)){ 
 			this.props.onSubmit(data, skill)
 			errorMessage.textContent = "";
-
-
 		 	this.setState(({
 			value: "",
 			 }))
-
-		 	
-
 			}else{
-				errorMessage.textContent = "Error - name must be between 1 and 12 cherecters long!";
-
+				errorMessage.textContent = "Error - You must enter a name between 1 and 20 characters!";
 				this.setState(({
 				value: "",
 

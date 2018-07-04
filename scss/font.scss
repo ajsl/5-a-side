@@ -18,10 +18,21 @@ h1 {
 
 	b {
 		font-size: 80px;
+		background: linear-gradient(#1252C8, #1354CD);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
 	}
 }
 
 btn {
 	color: #fff;
+}
+
+.error-message {
+	font-size: 20px;
+	position: absolute;
+	color: red;
+
+
 }
 

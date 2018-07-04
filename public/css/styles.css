@@ -67,14 +67,16 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 60%;
-  min-height: 150px; }
+  width: 60%;
+  min-height: 150px;
+  background-color: #e6e6e6;
+  border-radius: 50px 50px 0px 0px; }
 
 .header {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 5%; }
+  padding: 5% 0%; }
 
 footer {
   display: flex;
@@ -96,7 +98,7 @@ footer {
   margin: 20px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0px 0px 40px -6px rgba(0, 0, 0, 0.8); }
+  background-color: #e6e6e6; }
 
 .team-list {
   display: flex;
@@ -136,19 +138,14 @@ footer {
   flex-direction: column;
   align-items: center; }
 
-#root {
-  background-image: url("./src/assets/images/grass.jpg"); }
-
 .error-not-found {
   display: flex;
   flex-direction: column;
   align-items: center; }
 
 .wrapper {
-  background-color: rgba(255, 255, 255, 0.9); }
-
-.player-card {
-  background-color: white; }
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px; }
 
 .form-section {
   display: flex;
@@ -161,9 +158,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   border: 1px solid black;
-  border-radius: 0px 50px 50px 0px;
+  border-radius: 0px 0px 50px 50px;
   align-self: center;
-  width: 50%; }
+  width: 60%;
+  background-color: #e6e6e6; }
 
 .radio-btn-container {
   display: flex;
@@ -257,10 +255,18 @@ h4 {
 h1 {
   font-size: 40px; }
   h1 b {
-    font-size: 80px; }
+    font-size: 80px;
+    background: linear-gradient(#1252C8, #1354CD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
 
 btn {
   color: #fff; }
+
+.error-message {
+  font-size: 20px;
+  position: absolute;
+  color: red; }
 
 @media screen and (min-width: 1000px) {
   .wrapper {

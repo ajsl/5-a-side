@@ -1,5 +1,5 @@
 export const validate = (value => {
-	if (value.length < 1 || value.length > 12 ){
+	if (value.length < 1 || value.length > 20 ){
 		return false
 	}else{
 		return true

@@ -14,9 +14,9 @@ class Skill extends Component {
 		//store the shuffled array of names in state. 
 		this.state = {
 			//use sort to re-arrange the array into skill order
-			namesSkill: (this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
-			//array of players not ordered by skill level. 
-			namesRandom: shuffle(this.props.names),
+			//namesSkill: (this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
+			//array of players. 
+			names: shuffle(this.props.names),
 			sort: true,
 		}
 		this.handleChange = this.handleChange.bind(this);
@@ -37,18 +37,20 @@ class Skill extends Component {
 
 	
 	render() {
+		console.log(this.state.names)
+		//console.log(this.state.names)
 		//set up empty arrays 
 		let names1 = [];
 		let names2 = [];
 		
-		if(this.state.sort === true){
+		if(this.state.sort !== true){
 			//split the names array into 2 separate arrays one with odd id's and the other even
-			names1 = shuffle(this.state.namesSkill.filter((name, i ) => i % 2 === 0 ));
-			names2 = shuffle(this.state.namesSkill.filter((name, i ) => i % 2 !== 0 ));
+			names1 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 === 0 );
+			names2 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 !== 0 );
 		}else{
 			//split the array into 2 using the midpoint as a reference
-			names1 = this.state.namesRandom.filter((name, i ) => i < midPoint(this.state.namesRandom));
-			names2 = this.state.namesRandom.filter((name, i ) => i >= midPoint(this.state.namesRandom));
+			names1 = this.state.names.filter((name, i ) => i % 2 === 0 );
+			names2 = this.state.names.filter((name, i ) => i % 2 !== 0 );
 			
 		}
 
@@ -59,12 +61,15 @@ class Skill extends Component {
 			reserve = names2.pop();
 		}
 
+		console.log(names1)
+		console.log(names2)
+
 		
 		return (
 
 			<React.Fragment>
 
-				{ this.state.namesRandom.length > 0 
+				{ this.state.names.length > 0 
 					?
 					<div className="btn-skill">
 						<input type="checkbox" value="skill" id="skill" onChange={this.handleChange} />

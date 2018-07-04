@@ -12,9 +12,11 @@
 	flex-direction: column;
 	justify-content: center;
 	border: 1px solid black;
-	border-radius: 0px 50px 50px 0px;
+	border-radius: 0px 0px 50px 50px;
 	align-self: center;
-	width: 50%;
+	width: 60%;
+	background-color: hsla(0, 0%, 90%, 1);
+
 }
 
 .radio-btn-container {
