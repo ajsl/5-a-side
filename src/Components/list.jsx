@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Player from "./Player";
 import { Link } from "react-router-dom";
+import info from "../assets/images/info.png"
 import { validate, repeat } from "../Data/dataFunctions";
 
 
@@ -68,9 +69,11 @@ class List extends Component {
 	}
 	hiddenClick() {
 		this.setState(({
-			instructions: false,
+			instructions: this.state.instructions ? false : true,
 		}))
 	}
+
+
 
 	render() {
 		const { names, onClick  } = this.props 
@@ -127,6 +130,9 @@ class List extends Component {
 					<div className="submit-btn-container">
 							<input className="input btn submit-btn" type="submit" value="Add Player"/>
 					</div>
+					<div className="info-btn-container">
+						<a onClick={this.hiddenClick} className="info-btn"><img className="info-img" src={info}/></a>
+					</div>	
 					</form>	
 				</section>	
 				<section className="sort-btn">

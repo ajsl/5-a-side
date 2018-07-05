@@ -69,6 +69,34 @@ button {
 	align-self: flex-end;
 	color: black;
 }
+.info-btn {
+	color: black;
+	position: relative;
+	left: 15%;
+	top: 35%;
+	
+}
+.info-btn-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.info-btn {
+	margin-right: 22%;
+	margin-bottom: 2%;
+	heigth: 15px;
+	width: 15px;
+	display: flex;
+	position: relative;
+	border-radius: 15px;
+	justify-content: center;
+	background-color: hsla(0, 0, 0, 0)
+}
+.info-img {
+	height: 15px;
+	width: 15px;
+}
+
 
 
 	

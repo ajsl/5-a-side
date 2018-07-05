@@ -69,7 +69,8 @@ table {
   width: 60%;
   min-height: 150px;
   background-color: #e6e6e6;
-  border-radius: 50px 50px 0px 0px; }
+  border-radius: 50px 50px 0px 0px;
+  overflow: visable; }
 
 .header {
   display: flex;
@@ -247,6 +248,31 @@ button {
   align-self: flex-end;
   color: black; }
 
+.info-btn {
+  color: black;
+  position: relative;
+  left: 15%;
+  top: 35%; }
+
+.info-btn-container {
+  display: flex;
+  justify-content: flex-end; }
+
+.info-btn {
+  margin-right: 22%;
+  margin-bottom: 2%;
+  heigth: 15px;
+  width: 15px;
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0); }
+
+.info-img {
+  height: 15px;
+  width: 15px; }
+
 .team-card {
   display: flex;
   flex-direction: column;
@@ -358,4 +384,7 @@ h5 {
   .header-box {
     width: 80%; }
   .error-message {
-    position: relative; } }
+    position: relative; }
+  .team-list {
+    flex-direction: column;
+    align-item: center; } }
