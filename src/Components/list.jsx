@@ -12,11 +12,12 @@ class List extends Component {
 
 			value: "",
 			skill: "1",
-			namesArray: this.props.names,
+			instructions: true,
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleSelect = this.handleSelect.bind(this);
+		this.hiddenClick = this.hiddenClick.bind(this);
 
 	}	
 
@@ -64,6 +65,11 @@ class List extends Component {
 
 		this.setState({skill: e.target.value});
 
+	}
+	hiddenClick() {
+		this.setState(({
+			instructions: false,
+		}))
 	}
 
 	render() {
@@ -127,6 +133,16 @@ class List extends Component {
 
 					{names.length > 3 ? <Link  to="/skill"><button className="btn sort" disabled={ names.length < 4 ? true : false } >Sort into teams</button></Link>: ""}
 
+				</section>
+				{/*div displayed at the start with instructions and displayed when requested */}
+				<section id="intro" className={this.state.instructions ? "intro-container" : "hidden"}  >
+					<div className="intro">
+						<button onClick={this.hiddenClick} className="close-btn">x</button>
+						<h4>Welcome to the 5 a side team picker. </h4>
+						<h5>Begin by typing your player names into the feild above, If you wish you can include their skill level to help make sure you have balenced teams. The app requires a minimum of 4 names. Once you've reached that number a button will appear, press it to sort the players into 2 teams. Don't worry if you have an odd number we'll help you pick a reserve</h5>
+						<h5>If you make a mistake just press the x next the the name and enter it again. Each name must be unique, so if you have players with the same name you might have to get creative
+						More than 10? don't worry we'll help you pick a team what ever the number</h5> 
+					</div>
 				</section>
 				{/*render the player names below from the array in store. 
 				names passed through props.*/}
