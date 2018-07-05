@@ -131,7 +131,7 @@ class Skill extends Component {
 					</div>
 
 					{ reserve.id ?
-					<div className="team-card">
+					<div className="team-card reserve">
 						<h4 className="team-title">Reserve</h4>
 						 <Player id={ reserve.id } names={ reserve }/> 
 					</div>

@@ -27,6 +27,9 @@
 }
 
 @media screen and (max-width: 300px) {
+	.info-btn {
+		align-self: center;
+	}
 
 	.wrapper {
 		margin: 0px;
@@ -74,8 +77,34 @@
 	}
 	.team-list {
 		flex-direction: column;
-		align-item: center;
+		align-items: center;
 
+	}
+	.team-card {
+		order: 3;
+	}
+	.team1 {
+		order: 1;
+
+	}
+	.team2 {
+		order: 2;
+	}
+
+	.submit-btn-container {
+		display: flex;
+		justify-content: center;
+	}
+	.submit-btn {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.info-btn {
+		bottom: 5px;
+		right: 5px;
 	}
 }
 
