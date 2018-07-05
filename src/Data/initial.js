@@ -4,19 +4,23 @@ const initial = {
 		//test data
 		// {
 		// 	name: "james",
-		// 	id: 1
+		// 	id: 1,
+		// 	skill: 1
 		// },
 		// {
 		// 	name: "tom",
-		// 	id: 2
+		// 	id: 2,
+		// 	skill: 1
 		// },
 		// {
 		// 	name: "simon",
-		// 	id: 3
+		// 	id: 3,
+		// 	skill: 1
 		// },
 		// {
 		// 	name: "paul",
-		// 	id: 4
+		// 	id: 4,
+		// 	skill: 1
 		// },
 		// {
 		// 	name: "charles",

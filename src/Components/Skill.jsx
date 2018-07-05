@@ -11,12 +11,15 @@ class Skill extends Component {
 	constructor(props){
 		super(props);
 
-		//store the shuffled array of names in state. 
+		 
 		this.state = {
 			value1: "",
 			value2: "", 
+			//boolean flags for the display of team input fields
 			displayTeam1: true,
 			displayTeam2: true,
+			//store the shuffled array of names in state, 
+			//needs to be shuffeld incase all players have the same skill level
 			names: shuffle(this.props.names),
 			
 		}
@@ -27,6 +30,8 @@ class Skill extends Component {
 		this.clicked2 = this.clicked2.bind(this);
 		this.clicked1 = this.clicked1.bind(this);
 	}
+
+	// team name onchange handlers 
 
 	handleChange1(e) {
 	 	this.setState(({
@@ -40,7 +45,7 @@ class Skill extends Component {
 	 	}))
 	 	
 	}
-	
+	//team name onSubmit handlers 	
 	handleSubmit1(e) {
 		e.preventDefault();
 		this.setState(({
@@ -56,6 +61,7 @@ class Skill extends Component {
 		}))
 	}
 
+	//team name edit button event handlers. 
 	clicked1(e) {
 		e.preventDefault();
 		this.setState(({
@@ -74,11 +80,11 @@ class Skill extends Component {
 	render() {
 	
 		const { displayTeam1, displayTeam2, names, value1, value2 } = this.state;
-			//split the names array into 2 separate arrays one with odd id's and the other even
+		//sort the names array by the skill level then split the names array into 2 separate arrays one with odd id's and the other even
 		const names1 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 === 0 );
 		const names2 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 !== 0 );
 		
-
+		//create a reserve player if there is an uneven number of players. 
 		let reserve = {};
 
 		if (names1.length > names2.length ) {
@@ -90,6 +96,7 @@ class Skill extends Component {
 		return (
 			
 			<React.Fragment>
+		{/*if there are no players in the array display an error and provie a to the home page. */}
 				{ names.length < 1 
 				? 
 					<div className="no-player"><h1>No players found</h1><Link to="/"><h2>Click here to add players</h2></Link></div>
@@ -99,6 +106,7 @@ class Skill extends Component {
 				<section className="team-list">
 
 					<div className="team-card team1">
+
 						{ displayTeam1 
 							? 
 							names.length 

@@ -13,7 +13,9 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
 
-
+// App.get('*', (req, res) => {
+// res.sendFile(path.join(__dirname, './index.html'));
+// });
 
 // set up the store and the dev tools. 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

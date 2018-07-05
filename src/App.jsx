@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from "./Components/Header";
 import List from "./Containers/List";
-import Team from "./Containers/Team";
 import Skill from "./Containers/Skill";
 import Footer from "./Components/Footer";
 import FourOhFour from "./Components/FourOhFour";
@@ -31,11 +30,9 @@ const App = () => (
 
         <Route exact path="/" component={ List } />
 
-        <Route exact path="/team" component={ Team } />
-
         <Route exact path="/skill" component={ Skill } />
 
-        <Route path ="/*"component={ FourOhFour } />
+        <Route path ="/*" component={ FourOhFour } />
 
       </Switch>  
 

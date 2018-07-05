@@ -47,7 +47,6 @@ table {
   border-spacing: 0; }
 
 .ref-image {
-  width: 400px;
   height: 400px; }
 
 .four-container {
@@ -87,8 +86,8 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 10% 2%;
-  min-height: 150px; }
+  margin: 50px 2% 10% 2%;
+  min-height: 240px; }
 
 .team-list {
   display: flex;
@@ -121,6 +120,9 @@ footer {
 .wrapper {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px; }
+
+.sort-btn {
+  height: 50px; }
 
 .form-section {
   display: flex;
@@ -245,7 +247,8 @@ button {
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: center; }
+  justify-content: center;
+  width: 200px; }
   .team-card h4 {
     align-self: center; }
 
@@ -299,7 +302,9 @@ btn {
     flex-direction: column;
     align-item: center; }
   .team-card {
-    align-self: center; } }
+    align-self: center; }
+  .four-container {
+    margin: 0 5px 0px 5px; } }
 
 @media screen and (max-width: 300px) {
   .wrapper {

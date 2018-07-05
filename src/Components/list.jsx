@@ -12,6 +12,7 @@ class List extends Component {
 
 			value: "",
 			skill: "1",
+			namesArray: this.props.names,
 		}
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,12 +30,17 @@ class List extends Component {
 		const data = this.state.value;
 		const skill = this.state.skill;
 
-		if (validate(data)){ 
-			this.props.onSubmit(data, skill)
-			errorMessage.textContent = "";
-		 	this.setState(({
-			value: "",
-			 }))
+		if ((validate(data))){ 
+			//check if the name is unique
+			if(repeat(this.state.value, this.props.names)){
+				this.props.onSubmit(data, skill)
+				errorMessage.textContent = "";
+			 	this.setState(({
+					value: "",
+				}))
+				}else{
+					errorMessage.textContent = "Error - Names must be unique"
+				}
 			}else{
 				errorMessage.textContent = "Error - You must enter a name between 1 and 20 characters!";
 				this.setState(({
@@ -117,6 +123,11 @@ class List extends Component {
 					</div>
 					</form>	
 				</section>	
+				<section className="sort-btn">
+
+					{names.length > 3 ? <Link  to="/skill"><button className="btn sort" disabled={ names.length < 4 ? true : false } >Sort into teams</button></Link>: ""}
+
+				</section>
 				{/*render the player names below from the array in store. 
 				names passed through props.*/}
 
@@ -126,13 +137,6 @@ class List extends Component {
 					{ names.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names } onClick={ onClick } btn={ true }/></div>)}
 
 				</section>
-				<section className="sort-btn">
-
-					{names.length > 3 ? <Link  to="/skill"><button className="btn sort" disabled={ names.length < 4 ? true : false } >Sort into teams</button></Link>: ""}
-
-				</section>
-					
-					
 					
 				
 			</React.Fragment>
