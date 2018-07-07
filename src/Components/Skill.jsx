@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Player from "./Player";
 import { Link } from "react-router-dom";
-import { shuffle, midPoint } from "../Data/dataFunctions";
+import { shuffle } from "../Data/dataFunctions";
 
 
 
@@ -13,12 +13,13 @@ class Skill extends Component {
 
 		 
 		this.state = {
+			//initial values for the team input fields.
 			value1: "",
 			value2: "", 
 			//boolean flags for the display of team input fields
 			displayTeam1: true,
 			displayTeam2: true,
-			//store the shuffled array of names in state, 
+			//store the shuffled array of names in local state, 
 			//needs to be shuffeld incase all players have the same skill level
 			names: shuffle(this.props.names),
 			
@@ -80,13 +81,17 @@ class Skill extends Component {
 	render() {
 	
 		const { displayTeam1, displayTeam2, names, value1, value2 } = this.state;
+
+		
+		
+
 		//sort the names array by the skill level then split the names array into 2 separate arrays one with odd id's and the other even
 		const names1 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 === 0 );
 		const names2 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 !== 0 );
-		
-		//create a reserve player if there is an uneven number of players. 
-		let reserve = {};
 
+		//create a reserve player if there is an uneven number of players.
+		let reserve = {};
+		
 		if (names1.length > names2.length ) {
 			reserve = names1.pop();
 		}else if(names2.length > names1.length) {
@@ -164,8 +169,6 @@ class Skill extends Component {
 					</div> 
 				</section>	
 			</React.Fragment>
-				
-				
 
 		);
 

@@ -4,7 +4,6 @@ import List from "./Containers/List";
 import Skill from "./Containers/Skill";
 import Footer from "./Components/Footer";
 import FourOhFour from "./Components/FourOhFour";
-import image from "./assets/images/grass.jpg";
 
 
 

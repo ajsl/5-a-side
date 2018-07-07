@@ -29,12 +29,14 @@ class List extends Component {
 		
 		e.preventDefault();
 
-		const data = this.state.value;
+		//added trim to remove the whitespace from names
+		const data = (this.state.value).trim();
+		
 		const skill = this.state.skill;
 
 		if ((validate(data))){ 
 			//check if the name is unique
-			if(repeat(this.state.value, this.props.names)){
+			if(repeat(data, this.props.names)){
 				this.props.onSubmit(data, skill)
 				errorMessage.textContent = "";
 			 	this.setState(({
@@ -77,7 +79,6 @@ class List extends Component {
 
 	render() {
 		const { names, onClick  } = this.props 
-		//const names = ["James", "Peter", "Charlotte", "Olivia", "Emma", "Alex", "Alice", "Emily", "John"];
 		return (
 
 			<React.Fragment>
@@ -131,7 +132,7 @@ class List extends Component {
 							<input className="input btn submit-btn" type="submit" value="Add Player"/>
 					</div>
 					<div className="info-btn-container">
-						<a onClick={this.hiddenClick} className="info-btn"><img className="info-img" src={info}/></a>
+						<a onClick={this.hiddenClick} className="info-btn"><img className="info-img" alt="infomation icon" src={info}/></a>
 					</div>	
 					</form>	
 				</section>	
@@ -143,10 +144,10 @@ class List extends Component {
 				{/*div displayed at the start with instructions and displayed when requested */}
 				<section id="intro" className={this.state.instructions ? "intro-container" : "hidden"}  >
 					<div className="intro">
-						<button onClick={this.hiddenClick} className="close-btn">x</button>
+						<button onClick={this.hiddenClick} className="close-btn">Close..</button>
 						<h4>Welcome to the 5 a side team picker. </h4>
 						<h5>Begin by typing your player names into the feild above, If you wish you can include their skill level to help make sure you have balenced teams. The app requires a minimum of 4 names. Once you've reached that number a button will appear, press it to sort the players into 2 teams. Don't worry if you have an odd number we'll help you pick a reserve</h5>
-						<h5>If you make a mistake just press the x next the the name and enter it again. Each name must be unique, so if you have players with the same name you might have to get creative
+						<h5>If you make a mistake just press the x next the the name and enter it again. Each name must be unique, so if you have players with the same name you might have to get creative.
 						More than 10? don't worry we'll help you pick a team what ever the number</h5> 
 					</div>
 				</section>

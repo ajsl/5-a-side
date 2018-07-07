@@ -1,9 +1,9 @@
 export const validate = (value => {
-	if (value.length < 1 || value.length > 20 ){
+	if (value.length < 1 || value.length > 30 || value === " " ){
 		return false
 	}else{
 		return true
-	};
+	}
 
 });	
 

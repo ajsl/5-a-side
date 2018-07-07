@@ -9,7 +9,7 @@
 
 .btn {
 	margin: 20px;
-	background: linear-gradient(#3E7AE9, #1354CD);
+	background: $button-color;
 	padding: 5px;
 	border-radius: 5px;
 
@@ -19,7 +19,7 @@
 .btn:hover {
 	border: 2px solid black;
 	padding: 4px;
-	background: linear-gradient(#1252C8, #1354CD);
+	background: $button-color-hover;
 	transition-duration:: 0.3s;
 }
 
@@ -32,7 +32,21 @@ button {
 }
 
 .btn-delete {
+	height: 2px;
+	width: 2px;
 	color: black;
+	text-align: center;
+
+	.btn-delete-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		p {
+			position: relative;
+			bottom: 2px;
+		}
+	}
+
 }
 .btn-skill {
 	display: flex;

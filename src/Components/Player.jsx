@@ -28,7 +28,7 @@ class Player extends Component {
 				<aside className="player-card card-1 card-2 card-3"> 
 
 					<h4>{names.name}</h4>
-					{ btn ? <button className="btn-delete" onClick={ this.onDelete } >x</button> : ""}
+					{ btn ? <button className="btn-delete" onClick={ this.onDelete } ><div className="btn-delete-text"><p>x</p></div></button> : ""}
 				</aside>
 
 			</React.Fragment> 
