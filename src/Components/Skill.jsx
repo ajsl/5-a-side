@@ -21,7 +21,7 @@ class Skill extends Component {
 			displayTeam2: true,
 			//store the shuffled array of names in local state, 
 			//needs to be shuffeld incase all players have the same skill level
-			names: shuffle(this.props.names),
+			names: shuffle(this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
 			
 		}
 		this.handleChange1 = this.handleChange1.bind(this);
@@ -82,14 +82,9 @@ class Skill extends Component {
 	
 		const { displayTeam1, displayTeam2, names, value1, value2 } = this.state;
 
-		
-		
+		const names1 = names.filter(name => name.id % 2 === 0)
+		const names2 = names.filter(name => name.id % 2 !== 0)
 
-		//sort the names array by the skill level then split the names array into 2 separate arrays one with odd id's and the other even
-		const names1 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 === 0 );
-		const names2 = (this.state.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))).filter((name, i ) => i % 2 !== 0 );
-
-		//create a reserve player if there is an uneven number of players.
 		let reserve = {};
 		
 		if (names1.length > names2.length ) {
@@ -111,12 +106,12 @@ class Skill extends Component {
 				<section className="team-list">
 
 					<div className="team-card team1">
-
+				{ /* display the team input feild and an edit button once it's set*/ }
 						{ displayTeam1 
 							? 
 							names.length 
 							? 
-								<form onSubmit={this.handleSubmit1} className="team-input1">
+								<form onSubmit={ this.handleSubmit1 } className="team-input1">
 									<input className="name-input team-input"  placeholder="Enter Team Name" type="text" value={ value1 } id="team1" onChange={this.handleChange1} />
 									<input className="submit-btn btn team-btn"type="submit"/>
 								</form>
@@ -126,7 +121,7 @@ class Skill extends Component {
 						:
 
 						<div className="team-edit-container">
-							<h3>{value1}</h3>
+							<h3>{ value1 }</h3>
 							<button className="btn edit-btn" onClick={ this.clicked1 }>edit</button>
 						</div>	
 						} 
@@ -144,7 +139,7 @@ class Skill extends Component {
 
 
 					<div className="team-card team2"> 
-
+						{ /* display the team input feild and an edit button once it's set*/ }
 						{ displayTeam2 
 							? 
 							names.length 
@@ -163,7 +158,8 @@ class Skill extends Component {
 							</div>
 						} 
 
-						{ names2.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names }  /></div>)}
+						{ names2.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names } 
+							/></div>)}
 						
 
 					</div> 

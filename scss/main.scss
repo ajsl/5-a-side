@@ -1,3 +1,5 @@
+//container styling
+
 .wrapper {
 	margin: 10px 50px 10px 50px;
 	border: 1px solid black;
@@ -15,7 +17,6 @@
 	background-color: hsla(0, 0%, 90%, 1);
 	border-radius: 50px 50px 0px 0px;
 	overflow: visable;
-
 
 }
 
@@ -41,8 +42,6 @@ footer {
 	min-height: 240px;
 }
 
-
-
 .team-list {
 	display: flex;
 	justify-content: space-around;
@@ -59,7 +58,6 @@ footer {
 	align-self: center;
 }
 
-
 .footer-title {
 	display: flex;
 	flex-direction: column;
@@ -67,13 +65,11 @@ footer {
 	border-top: 1px solid black;
 }
 
-
 .no-player {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
 
 .error-not-found {
 	display: flex;
@@ -84,11 +80,5 @@ footer {
 	background-color: hsla(360, 100, 100, 0.9);
 	border-radius: 10px;
 }
-.sort-btn {
-	height: 50px;
-}
-
-
-
 
 

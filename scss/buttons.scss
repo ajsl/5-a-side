@@ -3,8 +3,6 @@
 	justify-content: center;
 	margin: 2% 5px;
 	color: black;
-
-	
 }
 
 .btn {
@@ -12,8 +10,6 @@
 	background: $button-color;
 	padding: 5px;
 	border-radius: 5px;
-
-	
 }
 
 .btn:hover {
@@ -62,6 +58,9 @@ button {
 	padding: 9px 49px;
 	background: linear-gradient(#1252C8, #1354CD);
 	transition-duration:: 0.3s;
+}
+.sort-btn {
+	height: 50px;
 }
 
 .team-edit-container {

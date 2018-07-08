@@ -122,9 +122,6 @@ footer {
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px; }
 
-.sort-btn {
-  height: 50px; }
-
 .form-section {
   display: flex;
   flex-direction: column;
@@ -190,6 +187,13 @@ footer {
   min-width: 100%;
   overflow: visible; }
 
+.intro-title {
+  padding: 20px;
+  font-weight: bold; }
+
+.intro-text {
+  padding: 10px; }
+
 .sort-btn {
   display: flex;
   justify-content: center;
@@ -240,6 +244,9 @@ button {
   padding: 9px 49px;
   background: linear-gradient(#1252C8, #1354CD);
   transition-duration: 0.3s; }
+
+.sort-btn {
+  height: 50px; }
 
 .team-edit-container {
   align-self: center;
@@ -305,9 +312,7 @@ button {
     overflow-wrap: break-word;
     word-wrap: break-word;
     -ms-word-break: break-all;
-    /* Instead use this non-standard one: */
     word-break: break-word;
-    /* Adds a hyphen where the word breaks, if supported (No Blink) */
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
