@@ -19,6 +19,7 @@ class Skill extends Component {
 			//boolean flags for the display of team input fields
 			displayTeam1: true,
 			displayTeam2: true,
+			displaySkill: false,
 			//store the shuffled array of names in local state, 
 			//needs to be shuffeld incase all players have the same skill level
 			names: shuffle(this.props.names.sort((a, b) => parseFloat(a.skill) - parseFloat(b.skill))),
@@ -30,6 +31,7 @@ class Skill extends Component {
 		this.handleSubmit2 = this.handleSubmit2.bind(this);
 		this.clicked2 = this.clicked2.bind(this);
 		this.clicked1 = this.clicked1.bind(this);
+		this.skillClicked = this.skillClicked.bind(this);
 	}
 
 	// team name onchange handlers 
@@ -77,10 +79,16 @@ class Skill extends Component {
 		}))
 
 	}
+
+	skillClicked() {
+		this.setState(({
+			displaySkill: this.state.displaySkill ? false : true
+		}))
+	}
 	
 	render() {
 	
-		const { displayTeam1, displayTeam2, names, value1, value2 } = this.state;
+		const { displayTeam1, displayTeam2, names, value1, value2, displaySkill } = this.state;
 
 		const names1 = names.filter(name => name.id % 2 === 0)
 		const names2 = names.filter(name => name.id % 2 !== 0)
@@ -96,6 +104,18 @@ class Skill extends Component {
 		return (
 			
 			<React.Fragment>
+		{ /* if there are team names give thr option to show the skill level */ }
+				{ names.length > 1 
+				? 
+					<div className="skill-btn-container">
+						<input type="checkbox" onClick={this.skillClicked}/>
+						<label>Show player skill</label>
+					</div>
+				:
+				""	
+				}
+				
+				
 		{/*if there are no players in the array display an error and provie a to the home page. */}
 				{ names.length < 1 
 				? 
@@ -105,6 +125,7 @@ class Skill extends Component {
 				}	
 				<section className="team-list">
 
+
 					<div className="team-card team1">
 				{ /* display the team input feild and an edit button once it's set*/ }
 						{ displayTeam1 
@@ -113,7 +134,7 @@ class Skill extends Component {
 							? 
 								<form onSubmit={ this.handleSubmit1 } className="team-input1">
 									<input className="name-input team-input"  placeholder="Enter Team Name" type="text" value={ value1 } id="team1" onChange={this.handleChange1} />
-									<input className="submit-btn btn team-btn"type="submit"/>
+									<input className="submit-btn btn team-btn" type="submit"/>
 								</form>
 							:
 								null
@@ -126,14 +147,14 @@ class Skill extends Component {
 						</div>	
 						} 
 
-						{ names1.map((name, i ) => <div key={ name.id }  ><Player id={ name.id } names={ name } /></div>)}
+						{ names1.map((name, i ) => <div key={ name.id }  ><Player displaySkill={ displaySkill } id={ name.id } names={ name } /></div>)}
 
 					</div>
 
 					{ reserve.id ?
 					<div className="team-card reserve">
 						<h4 className="team-title">Reserve</h4>
-						 <Player id={ reserve.id } names={ reserve }/> 
+						 <Player displaySkill={ displaySkill } id={ reserve.id } names={ reserve }/> 
 					</div>
 					: <div></div>}
 
@@ -158,7 +179,7 @@ class Skill extends Component {
 							</div>
 						} 
 
-						{ names2.map((names, i) => <div key={ names.id } ><Player id={ names.id } names={ names } 
+						{ names2.map((name, i) => <div key={ name.id } ><Player displaySkill={ displaySkill } id={ name.id } names={ name } 
 							/></div>)}
 						
 

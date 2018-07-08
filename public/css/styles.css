@@ -59,7 +59,9 @@ table {
 .wrapper {
   margin: 10px 50px 10px 50px;
   border: 1px solid black;
-  box-shadow: 0px 0px 104px -6px rgba(0, 0, 0, 0.8); }
+  box-shadow: 0px 0px 104px -6px rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px; }
 
 .header-box {
   border: 1px solid black;
@@ -118,9 +120,9 @@ footer {
   flex-direction: column;
   align-items: center; }
 
-.wrapper {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px; }
+.skill-btn-container {
+  display: flex;
+  justify-content: center; }
 
 .form-section {
   display: flex;
@@ -307,7 +309,8 @@ button {
   margin: 20px;
   display: flex;
   justify-content: space-between;
-  background-color: #e6e6e6; }
+  background-color: #e6e6e6;
+  min-height: 46px; }
   .player-card h4 {
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -319,6 +322,13 @@ button {
     hyphens: auto; }
   .player-card button {
     max-height: 15px; }
+
+.player-card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .player-card-text h4 {
+    padding: 2px 0px; }
 
 .intro-container {
   display: flex;

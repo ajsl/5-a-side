@@ -17,7 +17,7 @@ class Player extends Component {
 	// render the  player card with button to delete. 
 	render () {
 
-		const { names, btn } = this.props;
+		const { names, btn, displaySkill } = this.props;
 
 
 
@@ -26,8 +26,10 @@ class Player extends Component {
 			<React.Fragment>
 
 				<aside className="player-card card-1 card-2 card-3"> 
-
-					<h4>{names.name}</h4>
+					<div className="player-card-text">
+						<h4>{names.name}</h4>
+						{ displaySkill ? <h4>Skill: {names.skill}</h4> : "" }
+					</div>	
 					{ btn ? <button className="btn-delete" onClick={ this.onDelete } ><div className="btn-delete-text"><p>x</p></div></button> : ""}
 				</aside>
 
