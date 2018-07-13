@@ -212,7 +212,7 @@ footer {
   border: 2px solid black;
   padding: 4px;
   background: linear-gradient(#1252C8, #1354CD);
-  transition-duration: 0.3s; }
+  transition-duration: 0.2s; }
 
 button {
   color: white; }
@@ -245,7 +245,7 @@ button {
   border: 2px solid black;
   padding: 9px 49px;
   background: linear-gradient(#1252C8, #1354CD);
-  transition-duration: 0.3s; }
+  transition-duration: 0.2s; }
 
 .sort-btn {
   height: 50px; }
@@ -396,7 +396,9 @@ h5 {
   .four-container {
     margin: 0 5px 0px 5px; }
   .player-card {
-    margin-left: 30px; } }
+    margin-left: 30px; }
+  .btn-delete {
+    min-height: 4px; } }
 
 @media screen and (max-width: 300px) {
   .info-btn {

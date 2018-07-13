@@ -30,16 +30,8 @@ export const shuffle = (array => {
 }) 
 
 //function to get the halfway point of an array
-export const midPoint = (array => Math.ceil(array.length / 2));
+export  const midPoint = (array => Math.ceil(array.length / 2));
 
-export const sortSkill = ((x,y) => { 
- 
-  if (x.skill < y.skill)
-    return -1;
-  if (x.skill > y.skill)
-    return 1;
-  return 0;
 
- });
 
 

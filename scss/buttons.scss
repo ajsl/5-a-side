@@ -16,7 +16,7 @@
 	border: 2px solid black;
 	padding: 4px;
 	background: $button-color-hover;
-	transition-duration:: 0.3s;
+	transition-duration:: 0.2s;
 }
 
 button {
@@ -56,8 +56,8 @@ button {
 .sort:hover {
 	border: 2px solid black;
 	padding: 9px 49px;
-	background: linear-gradient(#1252C8, #1354CD);
-	transition-duration:: 0.3s;
+	background: $button-color-hover;
+	transition-duration:: 0.2s;
 }
 .sort-btn {
 	height: 50px;

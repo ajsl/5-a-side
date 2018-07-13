@@ -46,7 +46,7 @@ class List extends Component {
 					errorMessage.textContent = "Error - Names must be unique"
 				}
 			}else{
-				errorMessage.textContent = "Error - You must enter a name between 1 and 20 characters!";
+				errorMessage.textContent = "Error - You must enter a name between 1 and 30 characters!";
 				this.setState(({
 				value: "",
 
@@ -146,13 +146,13 @@ class List extends Component {
 					<div className="intro">
 						<button onClick={this.hiddenClick} className="close-btn">Close..</button>
 						<h4 className="intro-title">Welcome to the 5-a-side team picker. </h4>
-						<h5 className="intro-text">Begin by typing your player names into the feild above, If you wish you can include their skill level to help make sure you have balenced teams. The app requires a minimum of 4 names. Once you've reached that number a button will appear, press it to sort the players into 2 teams. Don't worry if you have an odd number we'll help you pick a reserve</h5>
-						<h5 className="intro-text">If you make a mistake just press the x next the the name and enter it again. Each name must be unique, so if you have players with the same name you might have to get creative.
-						More than 10? don't worry we'll help you pick a team what ever the number</h5> 
+						<h5 className="intro-text">Begin by typing your player names into the field above, If you wish you can include their skill level to help make sure you have balanced teams. The app requires a minimum of 4 names. Once you've reached that number a button will appear, press it to sort the players into 2 teams. Don't worry if you have an odd number we'll help you pick a reserve</h5>
+						<h5 className="intro-text">If you make a mistake just press the x next to the name and enter it again. Each name must be unique and be less than 30 characters.
+						More than 10 players? don't worry we'll help you pick a team what ever the number</h5> 
 					</div>
 				</section>
-				{/*render the player names below from the array in store. 
-				names passed through props.*/}
+				{ /*render the player names below from the array in store. 
+				names passed through props.*/ }
 
 				<section className="player-list">
 

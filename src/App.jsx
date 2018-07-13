@@ -31,7 +31,7 @@ const App = () => (
 
         <Route exact path="/skill" component={ Skill } />
 
-        <Route path ="/*" component={ FourOhFour } />
+        <Route path="*" component={ FourOhFour } />
 
       </Switch>  
 

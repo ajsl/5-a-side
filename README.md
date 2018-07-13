@@ -34,8 +34,9 @@ If you would like to set it up in your local computer follow the steps below:
 ### Built with
 ________________________________________________________________________________________________________________
 
-React Js - used to buld the framework and the interface 
-Redux - Used to create the global store to allow the player's details to be used on mjltiple pages. 
+* React Js - used to buld the framework and the interface 
+
+* Redux - Used to create the global store to allow the player's details to be used on mjltiple pages. 
 
 ### Author
 ________________________________________________________________________________________________________________
